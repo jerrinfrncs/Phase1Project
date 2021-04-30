@@ -9,7 +9,7 @@ public class App {
 		System.out.println("-------------------Application Name: LockedMe.com------------------");
 		System.out.println("------------------Developer Name: Jerrin Joe Francis---------------");
 	}
-	void primaryMenu()
+	void primaryMenu() //method to print primary menu
 	{	
 		try {
 		Scanner sc=new Scanner(System.in);
@@ -47,7 +47,7 @@ public class App {
 		}
 	}
 
-	void secondaryMenu()
+	void secondaryMenu() //method to print secondary menu
 	{
 		try {
 		Scanner sc=new Scanner(System.in);
@@ -88,7 +88,7 @@ public class App {
 	}
 	public static void main(String args[])
 	{
-		App app=new App();
+		App app=new App();  
 		app.welcomeScreen();
 		app.primaryMenu();
 
