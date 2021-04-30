@@ -9,16 +9,16 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class FileOperations {
-	static String FILEPATH="C:\\Users\\Jerrin\\Desktop\\root";
+	static String FILEPATH="C:\\root";
 	File rootDirectory=new File(FILEPATH);
 	
-	void listFiles()
+	void listFiles() //method to list files
 	{
 		//String[] fileNames;
 		//fileNames=rootDirectory.list();
 		try {
-			List<String> fileNames=Files.list(Paths.get(FILEPATH)).map(f->f.getFileName().toString()).collect(Collectors.toList()); 
-			Collections.sort(fileNames);
+			List<String> fileNames=Files.list(Paths.get(FILEPATH)).map(f->f.getFileName().toString()).collect(Collectors.toList()); //read and convert to list
+			Collections.sort(fileNames); //sort file names
 			if(!fileNames.isEmpty())
 			{
 				for(String fileName:fileNames)
@@ -37,7 +37,7 @@ public class FileOperations {
 			}
 	}
 	
-	void addFile()
+	void addFile() //method to add file
 	{
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the name of the file");
@@ -65,7 +65,7 @@ public class FileOperations {
 		}
 	}
 	
-	void deleteFile()
+	void deleteFile() //method to delete file
 	{
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the name of the file to delete");
@@ -90,7 +90,7 @@ public class FileOperations {
 		System.out.println("File Not Found");
 	}
 	
-	void searchFile()
+	void searchFile() //method to search for the file
 	{
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the name of the file to search");
