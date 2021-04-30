@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -10,13 +11,16 @@ public class App {
 	}
 	void primaryMenu()
 	{	
+		try {
 		Scanner sc=new Scanner(System.in);
 		int option;
 		do{
 			System.out.println("Enter 1 to list file");
 			System.out.println("Enter 2 to add, delete or search for files");
 			System.out.println("Enter 3 to exit");
+			
 			option=sc.nextInt();
+			
 			switch(option)
 			{
 				case 1:
@@ -33,11 +37,19 @@ public class App {
 					System.out.println("Invalid a choice");
 					break;
 			}
+			
 		}while(option!=3);
+		}
+		catch(InputMismatchException e)
+		{
+			System.out.println("Input is not an integer");
+			primaryMenu();
+		}
 	}
 
 	void secondaryMenu()
 	{
+		try {
 		Scanner sc=new Scanner(System.in);
 		int option;
 		do {
@@ -45,7 +57,9 @@ public class App {
 			System.out.println("Enter 2 to delete a file");
 			System.out.println("Enter 3 to search a file");
 			System.out.println("Enter 4 to go back to previous menu");
+			
 			option=sc.nextInt();
+			
 			switch(option)
 			{
 				case 1:
@@ -65,6 +79,11 @@ public class App {
 			}
 		}while(option!=4);
 		primaryMenu();
+		}
+		catch(InputMismatchException e)
+		{
+			System.out.println("Input is not an integer");
+		}
 	}
 	public static void main(String args[])
 	{
