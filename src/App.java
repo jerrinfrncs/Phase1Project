@@ -83,6 +83,7 @@ public class App {
 		catch(InputMismatchException e)
 		{
 			System.out.println("Input is not an integer");
+			secondaryMenu();
 		}
 	}
 	public static void main(String args[])
